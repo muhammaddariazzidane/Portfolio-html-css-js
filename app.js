@@ -15,6 +15,8 @@
 // contact
 const scriptURL = "https://script.google.com/macros/s/AKfycbzmth1NISl2OpZvxC_AtgFUbvrB3uyaxMRBBwL1KpbjWRKaQc0TXA1-l2jFCqwTRStEMA/exec";
 const form = document.forms["zidane-contact-form"];
+const myAlert = document.querySelector(".my-alert");
+myAlert.style.display = "none";
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -24,8 +26,11 @@ form.addEventListener("submit", (e) => {
   })
     .then((response) => {
       form.reset();
-      alert("Pesan Berhasil Terkirim");
+      myAlert.style.display = "block";
       console.log("Success!", response);
     })
     .catch((error) => console.error("Error!", error.message));
+});
+myAlert.addEventListener("click", function () {
+  myAlert.style.display = "none";
 });
