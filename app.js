@@ -17,6 +17,7 @@ const scriptURL = "https://script.google.com/macros/s/AKfycbzmth1NISl2OpZvxC_Atg
 const form = document.forms["zidane-contact-form"];
 const myAlert = document.querySelector(".my-alert");
 myAlert.style.display = "none";
+const faLert = document.querySelector(".fa-times-circle");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -31,6 +32,6 @@ form.addEventListener("submit", (e) => {
     })
     .catch((error) => console.error("Error!", error.message));
 });
-myAlert.addEventListener("click", function () {
+faLert.addEventListener("click", function () {
   myAlert.style.display = "none";
 });
