@@ -28,6 +28,9 @@ form.addEventListener("submit", (e) => {
     .then((response) => {
       form.reset();
       myAlert.style.display = "block";
+      setTimeout(() => {
+        myAlert.style.display = "none";
+      }, 3000);
       console.log("Success!", response);
     })
     .catch((error) => console.error("Error!", error.message));
